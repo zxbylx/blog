@@ -44,6 +44,7 @@ class DevelopmentConfig(BaseConfig):
     # python解决SQLAlchemy+MySQL操作数据库时报警告Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...'
     # for column 'VARIABLE_VALUE' at row 478") result = self._query(query)
     SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@localhost:3306/flask'
+    SSL_DISABLED=True
 
 class TestingConfig(BaseConfig):
     TESTING = True
@@ -53,6 +54,7 @@ class TestingConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     # SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:123456@localhost:3306/flask'
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', prefix + os.path.join(basedir, 'data.db'))
+    SSL_DISABLED = False
 
 config = {
     'development': DevelopmentConfig,

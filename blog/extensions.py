@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_migrate import Migrate
-from flask_sslify import SSLify
+# from flask_sslify import SSLify
 
 bootstrap = Bootstrap()
 csrf = CSRFProtect()
@@ -18,7 +18,7 @@ mail = Mail()
 moment = Moment()
 migrate = Migrate()
 toolbar = DebugToolbarExtension()
-sslify = SSLify()
+# sslify = SSLify()
 
 #用户加载函数，接收用户id作为参数，返回对应的用户对象
 #现在当调用current_user时，flask_login会调用用户加载函数并返回对应的用户对象

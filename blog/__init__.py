@@ -12,7 +12,7 @@ from flask_wtf.csrf import CSRFError
 from blog.blueprints.admin import admin_bp
 from blog.blueprints.auth import auth_bp
 from blog.blueprints.blog import blog_bp
-from blog.extensions import bootstrap, db, ckeditor, mail, moment, login_manager, csrf, toolbar, migrate, sslify
+from blog.extensions import bootstrap, db, ckeditor, mail, moment, login_manager, csrf, toolbar, migrate
 from blog.models import Admin, Post, Category, Comment, Link
 from blog.settings import config
 
@@ -84,7 +84,7 @@ def register_extensions(app):
     moment.init_app(app)
     toolbar.init_app(app)
     migrate.init_app(app, db)
-    sslify.init_app(app)
+    # sslify.init_app(app)
 
 def register_blueprints(app):
     app.register_blueprint(blog_bp)
